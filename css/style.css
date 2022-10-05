@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+Sans&family=Noto+Kufi+Arabic:wght@800&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*,*::after,*::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    text-transform: capitalize;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --main-color:#10cab7;
+    --second-color:#2c4755;
+    --section-background:#f6f6f6;
+}
+
+body{
+    font-family: 'Work Sans', sans-serif;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+section{
+    padding: 4rem 0;
+}
+.main-title h2{
+    color:  #ebeced;
+    font-size: 7rem;
+    text-align: center;
+    padding: 0;
+
+}
+.main-title h2 + p{
+text-align: center;
+margin: -35px 0 0 0;
+color: #797979;
+font-size: 1.3rem;
+margin-bottom: 90px;
+}
+
+  /* -------------------start container--------------- */
+
+.container{
+    width: 100%;
+    margin: auto;
+    padding:0 0.8rem;
+}
+
+@media (min-width: 576px) {
+    .container {
+      width: 520px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      width: 740px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .container {
+      width: 960px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      width: 1140px;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .container {
+      width: 1320px;
+    }
+
+  }
+  /* -------------------end container--------------- */
+    /* -------------------start header--------------- */
+  nav .nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    height: 60px;
+  }
+
+nav .nav-content .logo {
+    width: 80px;
+}
+nav .nav-content .nav-menu {
+    position: relative;
+}
+nav .nav-content .nav-icons {
+    width: 40px;
+    height: 16px;  /*دي نفس الفكره بس بدل ما نعمل بوزشن هنعملها ب فليكس*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+nav .nav-content .nav-icons span {
+    height: 2px;
+    width: 80%;
+    background-color: black;
+}
+
+nav .nav-content .nav-icons span:nth-child(2) /*nth-child  دي بديها رقم العنصر وتمسكه */ {
+    width: 50%;
+}
+
+nav .nav-content  .nav-list {
+    position: absolute;
+    top:calc(100% + 20px);
+    right: 0;
+    background-color:#f6f6f6;
+    width: 200px;
+    display: none;
+    transition: display .5s;
+    z-index: 999;
+    
+}
+nav .nav-content  .nav-list::before{
+    content: '';
+    position: absolute;
+    border-width: 10px;
+    border-color: transparent transparent #f6f6f6 transparent;
+    border-style: solid;
+    right: 5px;
+    top:-20px;
+ 
+}
+nav .nav-content  .nav-list li  {
+    padding: 15px;
+    transition: .5s padding-left;
+
+}
+nav .nav-content  .nav-list li a{
+    color: #000; 
+}
+nav .nav-content  .nav-list li:hover{
+    padding-left: 30px;
+}
+nav .nav-content  .nav-list li:not(:last-child){
+    border-bottom:1px solid rgb(202, 195, 195);
+}
+ nav .nav-menu:hover .nav-list{
+    display: block;
+ }
+
+
+ header{
+    background-image: url('../assets/images/landing.jpg');
+    height:calc(100vh - 60px) ;
+    background-size: cover;
+    background-position: center;
+ }
+ header .header-text{
+    position: absolute;
+    top:50%;
+    left: 50%;
+   transform: translate(-50%,-50%);
+   text-align: center;
+   width: 360px;
+max-width: 100%;
+
+ }
+ header .header-text h1{
+font-size: 3.3rem;
+color: var(--main-color);
+ }
+ header .header-text p{
+
+margin-top: 25px;
+font-size: 1.3rem;
+line-height: 40px;
+ }
+      /* -------------------end header--------------- */
+       /* --------------start features-------  */
+.features{
+    background-color: var(--section-background);
+}       
+.features .features-content{
+   
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));  /*بتعامل مع العواميد*/
+    gap: 15px;
+    text-align: center;
+}
+
+.features .features-content .item i{
+    color: var(--main-color);
+    margin-bottom: 20px;
+}
+.features .features-content .item h3{
+    font-weight: 800;
+}
+.features .features-content .item  p{
+    margin-top: 20px;
+    color:#777;
+    line-height: 25px;
+}
+/*
+repeat() -->> عدد العواميد لو هكرر عواميد بنفس الحجم 
+auto-fit -->>  احسب عدد العواميد تلقائي واظبطها 
+minmax() -->> ابدا من 250 وانتهى عند 1 ف ار - دي معناها اكبر مساحه 
+هيبدا من 250 
+وميعديش 
+1fr
+*/
+
+
+      /* --------------end features-------  */
+    /* --------------start services-------  */
+.services .services-content{
+display: grid;
+grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+gap:30px
+  }
+  .services .services-content .serv{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
+  .services .services-content .serv i{
+    color: var(--main-color);
+    flex-basis:50px ;
+  }
+  .services .services-content .serv .serv-text{
+    flex:1;
+  }
+  .services .services-content .serv .serv-text h3{
+    margin: 0 0 20px;
+  }
+  .services .services-content .serv .serv-text p{
+    margin-top: 20px;
+    color: #444;
+    font-weight:300;
+   line-height: 1.6;
+  }
+  .services .services-content img{
+    width: 260px;
+    margin-left: 30px;
+  }
+  .services .services-content .img-style{
+    position: relative;
+  }
+  .services .services-content .img-style::before{
+    content: '';
+    position:absolute;
+    width: 100px;
+    height: calc(100% + 100px);
+    right: 0;
+    top:-50px;
+    background-color: var(--second-color);
+    z-index: -1;
+  }
+        /* --------------end services-------  */
+        /* ------start portfolio------ */
+.portfolio{
+    background-color: var(--section-background);
+}        
+.portfolio .portfolio-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+   gap:30px
+}
+.portfolio .portfolio-content .item{
+    background-color: white;
+}
+.portfolio .portfolio-content .port-text{
+    padding: 20px;
+}
+.portfolio .portfolio-content .port-text p{
+    color: #777;
+    font-size: .9rem;
+    padding-top: 10px;
+    line-height: 1.6;
+}
+
+
+         /* ------end portfolio------ */
+     /* ------start about------ */
+.about .about-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.about .about-content .left{
+    width: 40%;
+    
+}
+.about .about-content .left .image{
+    width: 250px;
+    height: 375px;position: relative;
+}
+.about .about-content .left .image::before{
+content: '';
+position: absolute;
+width: 100px;
+height: calc(100% + 80px);
+top:-40px;
+left:-25px; 
+background-color: #ebeced;
+z-index: -1;
+}
+
+.about .about-content .left .image::after{
+    content: '';
+    position: absolute;
+    width: 170px;
+    height: 370px;
+    top:-38px;
+    left:90%;
+    z-index: -1;
+    border-left: 60px  solid var(--main-color);
+    border-bottom: 80px solid var(--main-color);
+}
+.about .about-content .right{
+    width: calc(60% - 20px);
+}
+.about .about-content .right p:first-of-type{
+font-weight: 700;
+line-height: 1.9;
+margin-bottom: 45px;
+}
+.about .about-content .right hr{
+display: inline-block;
+border-color: var(--main-color);
+width: 50%;
+}
+
+.about .about-content .right p:last-of-type{
+    line-height: 1.9;
+    color: #777;
+    margin-top: 30px;
+}
+
+
+     /* ------end about------ */
+ /* ------start contact------ */
+     .contact{
+background-color: var(--section-background);
+    }
+ .contact .text{
+    text-align: center;
+ }
+
+ .contact .text h3{
+    color: var(--second-color);
+    font-size: 2rem;
+    font-weight:800 ;
+    letter-spacing: -2px;
+    margin-bottom: 18px;
+ }
+ .contact .text a{
+    color: var(--main-color);
+    font-size:1.8rem ;
+    font-weight: 800;
+ }
+ .contact .text  p{
+    margin: 20px 0;
+ }
+ .contact .text  p i{
+    color: var(--second-color);
+    margin-left: 10px;
+ }
+
+ /* ------end contact------ */
+
+ footer{
+    background-color: var(--second-color);
+    height: 80px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+ }
+ footer p{
+    color: white;
+    /* text-align: center; */
+ }
+ footer p span{
+    color: var(--main-color);
+     font-weight: 500;
+ }
+
+
+
+ /*------------ start media --------------*/
+@media (max-width:1199px){
+   .imagee{
+        display:none;
+    }  
+}
+@media (max-width:991.89px){
+    .about .about-content .left .image::before,
+    .about .about-content .left .image::after{
+display: none;
+    }
+}
+
+
+@media (max-width:767px){
+    :root{
+        font-size: 14px;
+    }
+    .main-title h2{
+        font-size: 5rem;
+    }
+    .main-title h2 + p{
+        font-size: .8rem;
+        margin: -20px 0 0 0;
+        margin-bottom: 90px;
+    }
+
+    .services .services-content .serv{
+        flex-direction: column;
+        text-align: center;
+        /* row-gap: 40px; */
+    }
+    .portfolio .portfolio-content{
+        text-align: center;
+    }
+
+    .about .about-content{
+        flex-direction: column;
+     
+  align-items: center;
+  text-align: center;
+    }
+    .about .about-content .right{
+        width: 100%;
+        margin-top: 60px;
+        
+    }
+    .about .about-content .left{
+        margin-right:60px;
+    }
+  
+}
+
+
+
+
+  /*------------ end media --------------*/
